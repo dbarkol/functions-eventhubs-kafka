@@ -31,8 +31,13 @@ namespace Zohan.KafkaDemo
             // Retrieve the topic name
             var topicName = Environment.GetEnvironmentVariable("EventHubName");
 
+            // Read the message body from the incoming request
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+
             // Send the event to the topic
-            await _producer.SendEvent(topicName, null, DateTime.UtcNow.ToLongTimeString());
+            await _producer.SendEvent(topicName,    // topic  name
+                null,                               // key
+                requestBody);                       // value
 
             return (ActionResult)new OkObjectResult($"Ok");  
         }
