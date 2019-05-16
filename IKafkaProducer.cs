@@ -4,6 +4,6 @@ namespace Zohan.KafkaDemo
 {
     public interface IKafkaProducer 
     {
-        Task SendMessage(string topicName, string key, string value);
+        Task SendEvent(string topicName, string key, string value);
     }
 }

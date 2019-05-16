@@ -30,7 +30,7 @@ namespace Zohan.KafkaDemo
             _producer = new ProducerBuilder<string, string>(config).Build();            
         }
 
-        public Task SendMessage(string topicName, string key, string value)
+        public Task SendEvent(string topicName, string key, string value)
         {
             return  _producer.ProduceAsync(topicName, new Message<string, string>{
                 Key = key,
