@@ -6,9 +6,9 @@ This code in this repository demonstrates how to:
 * [Use dependency injection in .NET Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-dotnet-dependency-injection) for a Kafka producer.
 * Consume message from a Kafka topic using [kafkacat](https://github.com/edenhill/kafkacat).
 
-## Setup using the Azure CLI:
+## Setup with the Azure CLI:
 
-The following steps will create an instance of Azure Event Hubs that is enabled with the Kafka protocol. It will also create an event hub (kafka topic) and access policy for sending and listening to events.
+The following steps will create an instance of Azure Event Hubs that is enabled with the Kafka protocol. It will also create an event hub (kafka topic) and an access policy for sending and listening to events. These steps can be achieved with the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
 #### Initialize some variables:
 ```
@@ -39,7 +39,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group $rgname --na
 
 ## Azure Function as a Kafa Producer
 
-This is an example of how an HTTP-triggered function can be used as a producer to a Kafka topic.
+This repository contains a HTTP-triggered function that takes the incoming request and passes it along to a kafka topic. The function also showcases how to leverage the recently released dependency injection support of .NET functions.
 
 #### Function settings for local.settings.json:
 ```
@@ -56,16 +56,18 @@ This is an example of how an HTTP-triggered function can be used as a producer t
 }
 ```
 
-When deployed in Azure, the last three settings (EventHubConnectionString, EventHubFqdn, EventHubName) must be configured in the application settings. The IsLocal should be emitted.
+#### Running in Azure
+
+When deployed in Azure, the last three settings (*EventHubConnectionString*, *EventHubFqdn*, *EventHubName*) must be configured in the application settings. 
+
+The *IsLocal* setting should be emitted or set to "0".
 
 ## Consume events with kafkacat
 
-[kafkacat]((https://github.com/edenhill/kafkacat)) is a great and easy-to-use utility for consuming events from a Kafka topic.
+[kafkacat]((https://github.com/edenhill/kafkacat)) is an easy-to-use utility for consuming events from a Kafka topic.
 
 #### Setup
-Install kafkacat: https://github.com/edenhill/kafkacat. 
-
-If you are using a Windows machine, you can use the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about).  
+Install kafkacat: https://github.com/edenhill/kafkacat. If you are using a Windows machine, you can use the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about).  
 
 #### Consume events
 From the terminal:
