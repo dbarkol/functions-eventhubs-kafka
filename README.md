@@ -8,6 +8,8 @@ This code in this repository demonstrates how to:
 * [Use dependency injection in .NET Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-dotnet-dependency-injection) for a Kafka producer.
 * Consume message from a Kafka topic using [kafkacat](https://github.com/edenhill/kafkacat).
 
+Accompanying blog post: https://madeofstrings.com/2019/05/17/azure-event-hubs-kafka-and-dependency-injection-in-azure-functions/
+
 ## Setup with the Azure CLI:
 
 The following steps will create an instance of Azure Event Hubs that is enabled with the Kafka protocol. It will also create an event hub (kafka topic) and an access policy for sending and listening to events. These steps can be achieved with the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
