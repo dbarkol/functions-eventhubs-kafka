@@ -1,5 +1,7 @@
 # Azure Functions, Event Hubs and Kafka Demo
 
+![Functions, Event Hubs and Kafka](https://madeofstrings.files.wordpress.com/2019/05/functions-kafka-hubs.png)
+
 This code in this repository demonstrates how to:
 
 * Send messages from an Azure Function to [Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/) using the [Kafka](https://kafka.apache.org/) protocol.
