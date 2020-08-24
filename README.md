@@ -1,4 +1,4 @@
-# Azure Functions, Event Hubs and Kafka Demo
+# Azure Functions, Event Hubs and Kafka Demo 
 
 ![Functions, Event Hubs and Kafka](https://madeofstrings.files.wordpress.com/2019/05/functions-kafka-hubs.png)
 
